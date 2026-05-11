@@ -94,7 +94,7 @@ body{
 /* ========================================= */
 
 .gallery{
-  padding:40px 5% 120px;
+  padding:40px 6% 120px;
 }
 
 .grid{
@@ -103,7 +103,7 @@ body{
   grid-template-columns:
   repeat(auto-fit,minmax(320px,1fr));
 
-  gap:25px;
+  gap:30px;
 }
 
 /* ========================================= */
@@ -111,16 +111,9 @@ body{
 /* ========================================= */
 
 .project-card{
-  position:relative;
+  background:#111;
 
-  background:
-  linear-gradient(
-    145deg,
-    #151515,
-    #101010
-  );
-
-  border:1px solid #262626;
+  border:1px solid #222;
   border-radius:28px;
 
   overflow:hidden;
@@ -131,72 +124,40 @@ body{
   0 10px 30px rgba(0,0,0,.25);
 }
 
-/* glow emas */
-.project-card::before{
-
-  content:"";
-
-  position:absolute;
-
-  width:250px;
-  height:250px;
-
-  background:
-  radial-gradient(
-    circle,
-    rgba(255,215,0,.22),
-    transparent 70%
-  );
-
-  top:var(--y);
-  left:var(--x);
-
-  transform:
-  translate(-50%,-50%);
-
-  opacity:0;
-
-  transition:opacity .3s;
-
-  pointer-events:none;
-}
-
-.project-card:hover::before{
-  opacity:1;
-}
-
 .project-card:hover{
   transform:translateY(-10px);
 
-  border-color:
-  rgba(255,215,0,.5);
+  border-color:gold;
 }
 
-/* gambar */
 .project-card img{
   width:100%;
-  height:260px;
+  height:280px;
 
   object-fit:cover;
 
   display:block;
+
+  transition:.4s;
 }
 
-/* isi card */
+.project-card:hover img{
+  transform:scale(1.04);
+}
+
 .project-info{
-  padding:25px;
+  padding:28px;
 }
 
 .project-info h3{
-  font-size:22px;
+  font-size:24px;
 
-  margin-bottom:12px;
+  margin-bottom:14px;
 }
 
 .project-info p{
   color:#999;
-
-  line-height:1.7;
+  line-height:1.8;
 }
 
 /* ========================================= */
@@ -278,25 +239,5 @@ body{
   .cta h2{
     font-size:36px;
   }
-  /* ========================================= */
-/* ANIMATION */
-/* ========================================= */
-
-.project-card{
-  opacity:0;
-
-  transform:
-  translateY(40px);
-
-  transition:
-  all .8s ease;
-}
-
-.project-card.show{
-  opacity:1;
-
-  transform:
-  translateY(0);
-}
 
 }
